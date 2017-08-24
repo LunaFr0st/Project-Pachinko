@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Bounce : MonoBehaviour
 {
-    public Rigidbody rigid;
+    public float bounce;
+    Rigidbody rigi;
     // Use this for initialization
     void Start()
     {
-
+        rigi = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-
+        if (collision.transform.tag == "Bounce")
+        {
+            rigi.velocity = ((transform.position - collision.contacts[0].point) * bounce);
+        }
     }
 }
