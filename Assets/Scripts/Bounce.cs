@@ -13,7 +13,7 @@ public class Bounce : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "Bounce")
+        if (collision.transform.tag == "Pin")
         {
             rigi.velocity = ((transform.position - collision.contacts[0].point) * bounce);
         }
