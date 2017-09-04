@@ -27,6 +27,9 @@ namespace Pachniko
                 scoreCounter = 0;
             }
             /**/
+
+            
+
         }
         void FixedUpdate()
         {
@@ -48,6 +51,9 @@ namespace Pachniko
                 scoreCounter = 0;
             }
         }
+
+
+
     }
 }
 
