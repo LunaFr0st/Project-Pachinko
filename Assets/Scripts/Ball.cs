@@ -7,27 +7,26 @@ namespace Pachniko
 {
     public class Ball : MonoBehaviour
     {
-        public int scoreCounter;
+        public static int scoreCounter;
         public GameObject ballPrefab;
         public Text scoreDisplayCounter;
-        public GameObject spawnPoint;
-        public GameObject clone;
+        public Transform spawnPoint;
+        GameObject clone;
         public int bonusBall = 30;
 
-        // Use this for initialization
         void Start()
         {
             scoreCounter = 0;
         }
-
-        // Update is called once per frame
         void Update()
         {
-            scoreDisplayCounter.text = "Ball Bounces: " + scoreCounter + " / 10";
+            scoreDisplayCounter.text = "Ball Bounces: " + scoreCounter + " / " + bonusBall;
+            /**
             if (scoreCounter > bonusBall)
             {
                 scoreCounter = 0;
             }
+            /**/
         }
         void FixedUpdate()
         {
@@ -38,16 +37,14 @@ namespace Pachniko
             if (other.gameObject.tag == "Pin")
             {
                 scoreCounter++;
-                print("Score Increased to: " + scoreCounter);
+             //   print("Score Increased to: " + scoreCounter);
             }
         }
         void newBall()
         {
-            
-            
-            if (scoreCounter == bonusBall)
+            if (scoreCounter >= bonusBall)
             {
-                clone = Instantiate(ballPrefab, spawnPoint.transform.position, Quaternion.identity);
+                clone = Instantiate(ballPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
                 scoreCounter = 0;
             }
         }
