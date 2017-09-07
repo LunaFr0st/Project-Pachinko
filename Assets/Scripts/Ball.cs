@@ -28,7 +28,7 @@ namespace Pachniko
             }
             /**/
 
-            
+
 
         }
         void FixedUpdate()
@@ -40,9 +40,14 @@ namespace Pachniko
             if (other.gameObject.tag == "Pin")
             {
                 scoreCounter++;
-             //   print("Score Increased to: " + scoreCounter);
+                //   print("Score Increased to: " + scoreCounter);
+            }
+            if (other.gameObject.tag == "Destroy")
+            {
+                Destroy(gameObject);
             }
         }
+
         void newBall()
         {
             if (scoreCounter >= bonusBall)
@@ -51,9 +56,6 @@ namespace Pachniko
                 scoreCounter = 0;
             }
         }
-
-
-
     }
 }
 
