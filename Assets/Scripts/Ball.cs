@@ -10,7 +10,7 @@ namespace Pachniko
         public static int scoreCounter;
         public GameObject ballPrefab;
         public Text scoreDisplayCounter;
-        public Transform spawnPoint;
+       
         GameObject clone;
         public int bonusBall = 30;
 
@@ -33,7 +33,7 @@ namespace Pachniko
         }
         void FixedUpdate()
         {
-            newBall();
+            //newBall();
         }
         void OnCollisionEnter(Collision other)
         {
@@ -43,14 +43,14 @@ namespace Pachniko
              //   print("Score Increased to: " + scoreCounter);
             }
         }
-        void newBall()
-        {
-            if (scoreCounter >= bonusBall)
-            {
-                clone = Instantiate(ballPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
-                scoreCounter = 0;
-            }
-        }
+        //void newBall()
+        //{
+        //    if (scoreCounter >= bonusBall)
+        //    {
+        //        clone = Instantiate(ballPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
+        //        scoreCounter = 0;
+        //    }
+        //}
 
 
 
