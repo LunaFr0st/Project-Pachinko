@@ -45,7 +45,7 @@ namespace Pachniko
             if (other.gameObject.tag == "Destroy")
             {
                 Destroy(gameObject);
-            }
+            }//destroys ball when touching trigger (place box over trigger in early tests so it appears the balls have gone into a hole)
         }
 
         void newBall()
