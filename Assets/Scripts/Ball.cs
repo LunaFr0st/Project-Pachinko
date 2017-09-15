@@ -16,7 +16,7 @@ namespace Pachinko
 
         void Start()
         {
-            scoreCounter = 0;
+            //scoreCounter = 0;
         }
         void Update()
         {
