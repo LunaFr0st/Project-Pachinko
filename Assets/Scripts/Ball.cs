@@ -9,8 +9,8 @@ namespace Pachinko
     {
       
         public GameObject ballPrefab;
-        
-       
+
+        public float scoreCounter;
         GameObject clone;
         public int bonusBall = 30;
 
