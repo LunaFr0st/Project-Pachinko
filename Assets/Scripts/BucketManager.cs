@@ -6,8 +6,8 @@ public class BucketManager : MonoBehaviour {
     public GameObject minBucket;
     public GameObject midBucket;
     public GameObject maxBucket;
-    public float minPoints = 50;
-    public float midPoints = 100;
+    public float minPoints = 0;
+    public float midPoints = 50;
     public float maxPoints = 150;
     public float bucketScore;
     // Use this for initialization
