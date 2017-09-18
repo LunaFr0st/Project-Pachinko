@@ -67,19 +67,20 @@ namespace Pachinko
         void OnGUI()
         {
             gameStyle.font = font;
-            gameStyle.fontSize = screenW / screenH;
+            gameStyle.fontSize = ((Screen.width / 9) + (Screen.height / 16)) / 2;
             gameStyle.normal.textColor = Color.HSVToRGB(hue,saturation,value);
+            
 
 
 
-            if (GUI.Button(new Rect(0.75f * scrW, 14 * scrH, 4*scrW, 2*scrH), "Launch Ball!", gameStyle))
+            if (GUI.Button(new Rect(scrW, 7.5f * scrH, 4f*scrW, 1*scrH), "Fire!", gameStyle))
             {
                 BallLauncher b = GetComponent<BallLauncher>();
                 b.Launch();
             }
             // GUI.Box(new Rect(scrW, scrH, scrW, scrH), "POWER");
-            GUI.Box(new Rect(0.25f * scrW, scrH, 0.25f * scrW, 4 * scrH), "POWER", gameStyle);
-            GUI.Box(new Rect(0.25f * scrW, 5 * scrH, 0.25f * scrW, -powerScale * scrH), powerTexture);
+            GUI.Box(new Rect(1 * scrW, scrH, 0.25f * scrW, 4 * scrH), "POWER");
+            GUI.Box(new Rect(1 * scrW, 5 * scrH, 0.25f * scrW, -powerScale * scrH), powerTexture);
         }
     }
 }
