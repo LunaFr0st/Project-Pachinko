@@ -9,6 +9,7 @@ namespace Pachinko
     public class GUIManager : MonoBehaviour
     {
         public GUIStyle gameStyle;
+        public GUIStyle scaleStyle;
         public Font font;
 
         private float scrW;
@@ -80,7 +81,7 @@ namespace Pachinko
             }
             // GUI.Box(new Rect(scrW, scrH, scrW, scrH), "POWER");
             GUI.Box(new Rect(1 * scrW, scrH, 0.25f * scrW, 4 * scrH), "POWER");
-            GUI.Box(new Rect(1 * scrW, 5 * scrH, 0.25f * scrW, -powerScale * scrH), powerTexture);
+            GUI.Box(new Rect(1 * scrW, 5 * scrH, 0.25f * scrW, -powerScale * scrH), "",scaleStyle);
         }
     }
 }
