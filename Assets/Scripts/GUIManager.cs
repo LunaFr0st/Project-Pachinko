@@ -41,7 +41,7 @@ namespace Pachinko
             //powerScale += Mathf.PingPong(0, 4);
             if (powerScale >= 1)
             {
-                powerScale += 2.5f * Time.deltaTime;
+                powerScale += 1.5f * Time.deltaTime;
             }
 
             if (powerScale >= 4)
@@ -53,16 +53,7 @@ namespace Pachinko
                 powerScale = 1;
 
             }
-            // scoreDisplayCounter.text = "Ball Bounces: " + scoreCounter + " / " + bonusBall;
-            /**
-            if (scoreCounter > bonusBall)
-            {
-                scoreCounter = 0;
-            }
-            /**/
-
-
-
+            
         }
 
         void OnGUI()
@@ -74,14 +65,14 @@ namespace Pachinko
 
 
 
-            if (GUI.Button(new Rect(scrW, 7.5f * scrH, 4f*scrW, 1*scrH), "Fire!", gameStyle))
+            if (GUI.Button(new Rect(scrW, 8f * scrH, 6.85f*scrW, 0.6f*scrH), " Launch", gameStyle))
             {
                 BallLauncher b = GetComponent<BallLauncher>();
                 b.Launch();
             }
             // GUI.Box(new Rect(scrW, scrH, scrW, scrH), "POWER");
             GUI.Box(new Rect(1 * scrW, scrH, 0.25f * scrW, 4 * scrH), "POWER");
-            GUI.Box(new Rect(1 * scrW, 5 * scrH, 0.25f * scrW, -powerScale * scrH), "",scaleStyle);
+            GUI.Box(new Rect(0.25f * scrW, 6.75f * scrH, 0.5f * scrW, -powerScale * scrH), "",scaleStyle);
         }
     }
 }
