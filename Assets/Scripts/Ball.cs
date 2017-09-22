@@ -29,15 +29,16 @@ namespace Pachinko
         {
             //newBall();
         }
-        void OnCollisionEnter(Collision other)
+        void OnTriggerExit(Collider col)
         {
-            if (other.gameObject.tag == "Pin")
+            if (col.gameObject.name == "Detector")
             {
-               
+                print("I made it");
             }
-
-
-
+            else
+            {
+                Destroy(clone.gameObject, 2);
+            }
         }
     }
 }
