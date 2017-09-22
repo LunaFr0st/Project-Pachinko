@@ -10,7 +10,7 @@ namespace Pachinko
 
     public class BallLauncher : MonoBehaviour
     {
-        public float ammo = 100f;
+        public int ammo = 100;
         private Rigidbody cloneRB;
         public GameObject ballPrefabs;
         public Transform spawnPoint;
@@ -24,7 +24,14 @@ namespace Pachinko
         // Update is called once per frame
         void Update()
         {
-
+            if(ammo > 999)
+            {
+                ammo = 999;
+            }
+            if(ammo <= 0)
+            {
+                ammo = 0;
+            }
         }
         public void Launch()
         {
