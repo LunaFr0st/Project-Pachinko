@@ -24,6 +24,7 @@ namespace Pachinko
             if(ammo <= 0)
             {
                 ammo = 0;
+                
             }
         }
         public void Launch()
